@@ -1,0 +1,49 @@
+<div class="container w-50 pt-5">
+    <div class="text-center">
+        <h1>SignUp</h1>
+    </div>
+    <form [formGroup]="signupForm" (ngSubmit)="signupdata()">  <!--  [formGroup]="signupForm" (submit)="signUp()" -->
+        <div class="form-group">
+            <label for="exampleInputEmail1">First Name</label>
+            <input type="text" formControlName="firstname" class="form-control" placeholder="Enter Your First Name">
+            <div *ngIf="checkSignup.firstname.errors && checkSignup.firstname.touched" class="alert alert-danger" role="alert">
+                <span *ngIf="checkSignup.firstname.invalid">Place Enter First Name</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Last Name</label>
+            <input type="text" formControlName="lastname" class="form-control" placeholder="Enter Your last Name">
+            <div *ngIf="checkSignup.lastname.errors && checkSignup.lastname.touched" class="alert alert-danger" role="alert">
+                <span *ngIf="checkSignup.lastname.invalid && checkSignup.lastname.touched">place Enter Last Name</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Phone Number</label>
+            <input type="number" formControlName="phonenumber" class="form-control ember-view ember-text-field" placeholder="Enter Your phone No.">
+            <div *ngIf="checkSignup.phonenumber.errors && checkSignup.phonenumber.touched" class="alert alert-danger" role="alert">
+                <span *ngIf="checkSignup.phonenumber.invalid && checkSignup.phonenumber.touched">place Enter valid Phone Number</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" formControlName="email"  class="form-control" placeholder="Enter Your Emial">
+            <div *ngIf="checkSignup.email.errors && checkSignup.email.touched" class="alert alert-danger" role="alert">
+                <span *ngIf="checkSignup.email.invalid">place Enter valid Emial</span>
+                <!-- <span *ngIf="checkSignup.email">place Enter your Email</span> -->
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" formControlName="password" class="form-control" placeholder="Enter Your Password">
+            <div *ngIf="checkSignup.password.errors && checkSignup.password.touched" class="alert alert-danger" role="alert">
+                <span *ngIf="checkSignup.password.invalid && checkSignup.password.touched">place Enter Password</span>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary" [disabled]='!signupForm.valid'>Sign UP</button> <!--  (click)="showLoginForm()" -->
+        </div>
+    </form>
+</div>
+
+
+  
