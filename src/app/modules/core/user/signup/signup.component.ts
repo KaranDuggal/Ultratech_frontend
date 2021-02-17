@@ -24,8 +24,6 @@ export class SignupComponent implements OnInit {
   }
   signupdata(){
     this.apiService.callAPI("post",this.signupForm.value,"api/users/signup").subscribe((data)=>{
-      console.log('==================');
-      console.log('data===> ', data)
       console.log('data===> ', data)
     })
     console.log(this.signupForm.value);

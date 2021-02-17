@@ -4,12 +4,12 @@
     </div>
     <form [formGroup]="loginForm" (ngSubmit)="logindata()">  <!--  [formGroup]="signupForm" (submit)="signUp()" -->
         <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="email" formControlName="email"  class="form-control" placeholder="Enter Your Emial">
-            <div *ngIf="checkLogin.email.errors && checkLogin.email.touched" class="alert alert-danger" role="alert">
+            <label for="exampleInputEmail1">Phone Number</label>
+            <input type="number" formControlName="phonenumber"  class="form-control" placeholder="Enter Your Phone Number">
+            <!-- <div *ngIf="checkLogin.email.errors && checkLogin.email.touched" class="alert alert-danger" role="alert">
                 <span *ngIf="checkLogin.email.invalid">place Enter valid Emial</span>
-                <!-- <span *ngIf="checkSignup.email">place Enter your Email</span> -->
-            </div>
+                <span *ngIf="checkSignup.email">place Enter your Email</span>
+            </div> -->
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
@@ -25,4 +25,3 @@
 </div>
 
 
-  
