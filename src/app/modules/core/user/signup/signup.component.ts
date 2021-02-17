@@ -13,7 +13,7 @@ export class SignupComponent implements OnInit {
     firstname: new FormControl(null, { validators: [Validators.required] }),
     lastname: new FormControl(null, { validators: [Validators.required] }),
     phonenumber: new FormControl(null, { validators: [Validators.required] }),
-    email: new FormControl(null, { validators: [Validators.required, Validators.email] }),
+    // email: new FormControl(null, { validators: [Validators.required, Validators.email] }),
     password: new FormControl(null, { validators: [Validators.required] }),
   })
   get checkSignup() {
