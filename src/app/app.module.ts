@@ -8,7 +8,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {UserModule} from "./modules/core/user/user.module"
 import {Common_Module} from './modules/common/common.module'
 import {HttpClientModule} from '@angular/common/http'
-
+import {HeadInterceptor} from 'src/app/interceptor/head/head.interceptor'
+// import {HTTP_INTERCEPTORS} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent
@@ -20,9 +21,16 @@ import {HttpClientModule} from '@angular/common/http'
     NgbModule,
     UserModule,
     Common_Module,
-    HttpClientModule
+    HttpClientModule,
+    // HeadInterceptor,
   ],
-  providers: [],
+  providers: [
+    // {
+    //   provide:HTTP_INTERCEPTORS,
+    //   useClass:HeadInterceptor,
+    //   multi:true
+    // }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
