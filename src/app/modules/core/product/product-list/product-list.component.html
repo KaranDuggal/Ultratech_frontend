@@ -1,1 +1,28 @@
-<p>product-list works!</p>
+<div class="container">
+    <div class="row">
+        <h1>All Product</h1>
+        <div  *ngFor="let product of productArr" class="m-3">
+            <div class="col border border-dark m-5 text-center">
+                <p><img src="https://picsum.photos/150" alt=""></p>
+                <div>
+                    <h1>Brand Name : {{product.brand_name}}</h1>
+                    <h1>Product Name : {{product.product_name}}</h1>
+                    <h1>Product Type : {{product.product_type}}</h1>
+                    <h1>price: {{product.price}}</h1>
+                    <h1>size: {{product.size}}</h1>
+                </div>
+                <!-- <div class="align-middle">
+                    <a type="button" class="btn btn-outline-dark m-2" [routerLink]="['../property/'+property.id]">Detail</a>
+                    <a type="button" class="btn btn-outline-dark m-2" (click)='delete(property.id)'>Delete</a>
+                </div> -->
+            </div>
+        </div>
+        
+        <!-- <div class="col border border-dark m-5">
+
+        </div>
+        <div class="col border border-dark m-5">
+
+        </div> -->
+    </div>
+</div>
