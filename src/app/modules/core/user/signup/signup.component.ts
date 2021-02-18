@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormGroupName, Validators } from '@angular/forms'
 import {ApiService} from 'src/app/services/api.service'
+import {SweetalertService} from 'src/app/services/alert/sweetalert.service'
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +11,8 @@ import {ApiService} from 'src/app/services/api.service'
 export class SignupComponent implements OnInit {
 
   constructor(
-    private apiService:ApiService
+    private apiService:ApiService,
+    private alert:SweetalertService
   ) { }
   signupForm = new FormGroup({
     firstname: new FormControl(null, { validators: [Validators.required] }),
@@ -25,6 +27,7 @@ export class SignupComponent implements OnInit {
   signupdata(){
     this.apiService.callAPI("post",this.signupForm.value,"api/users/signup").subscribe((data)=>{
       console.log('data===> ', data)
+      this.alert.apiResponseAlert() 
     })
     console.log(this.signupForm.value);
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormGroupName, Validators } from '@angular/forms'
 import {ApiService} from 'src/app/services/api.service'
+import {SweetalertService} from 'src/app/services/alert/sweetalert.service'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,7 +10,8 @@ import {ApiService} from 'src/app/services/api.service'
 export class LoginComponent implements OnInit {
 
   constructor(
-    private apiService:ApiService
+    private apiService:ApiService,
+    private alert:SweetalertService
   ) { }
 
   loginForm = new FormGroup({
@@ -23,8 +25,9 @@ export class LoginComponent implements OnInit {
     this.apiService.callAPI("post", this.loginForm.value, "api/users/login").subscribe((data) => {
       console.log('==================');
       console.log('data===> ', data)
+      this.alert.apiResponseAlert() 
     })
-    console.log(this.loginForm.value);
+    
 
   }
   ngOnInit(): void {
