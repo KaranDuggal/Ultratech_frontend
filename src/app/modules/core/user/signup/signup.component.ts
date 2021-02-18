@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormGroupName, Validators } from '@angular/forms'
 import {ApiService} from 'src/app/services/api/api.service'
 import {SweetalertService} from 'src/app/services/alert/sweetalert.service'
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-signup',
@@ -12,7 +13,8 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private apiService:ApiService,
-    private alert:SweetalertService
+    private alert:SweetalertService,
+    private router:Router
   ) { }
   signupForm = new FormGroup({
     firstname: new FormControl(null, { validators: [Validators.required] }),
@@ -28,6 +30,7 @@ export class SignupComponent implements OnInit {
     this.apiService.callAPI("post",this.signupForm.value,"api/users/signup").subscribe((data)=>{
       console.log('data===> ', data)
       this.alert.apiResponseAlert() 
+      this.router.navigate(['/'])
     })
     console.log(this.signupForm.value);
 
