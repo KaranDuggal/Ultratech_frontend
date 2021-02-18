@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormGroupName, Validators } from '@angular/forms'
-import { ApiService } from 'src/app/services/api.service'
+import {ApiService} from 'src/app/services/api/api.service'
 @Component({
   selector: 'app-add-edit-product',
   templateUrl: './add-edit-product.component.html',

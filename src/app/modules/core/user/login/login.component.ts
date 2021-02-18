@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormGroupName, Validators } from '@angular/forms'
-import {ApiService} from 'src/app/services/api.service'
+import {ApiService} from 'src/app/services/api/api.service'
 import {SweetalertService} from 'src/app/services/alert/sweetalert.service'
 @Component({
   selector: 'app-login',
