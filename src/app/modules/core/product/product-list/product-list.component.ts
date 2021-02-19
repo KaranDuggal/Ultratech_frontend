@@ -34,5 +34,4 @@ export class ProductListComponent implements OnInit {
       // this.router.navigate(['product/allproduct'])
     })
   }
-
 }

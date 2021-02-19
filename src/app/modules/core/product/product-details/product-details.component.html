@@ -1,1 +1,25 @@
-<p>product-details works!</p>
+<div class="container w-50 pt-5">
+    <div class="text-center">
+        <h1>Product Detail</h1>
+    </div>
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title></mat-card-title>
+          <mat-card-title *ngIf="productData && productData.product_name">{{productData.product_name}}</mat-card-title> <!-- *ngIf="productData && productDetails.product_name" -->
+          <mat-card-subtitle *ngIf="productData && productData.product_type">{{productData.product_type}}</mat-card-subtitle> <!-- *ngIf="productData && productDetails.product_type" -->
+        </mat-card-header>
+        <img mat-card-image src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.uP7ySKHFZO9q5lr9Ynb0YwHaGb%26pid%3DApi&f=1" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <h3 *ngIf="productData && productData.price">price : {{productData.price}} Rs.</h3><!-- quantity -->
+          <h3 *ngIf="productData && productData.quantity">Quantity : {{productData.quantity}} Kg</h3>
+        </mat-card-content>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary" [routerLink]="['/product/allproduct/']" [state]="{tracingId: 123}">Edit</button>  <!-- (click)="showLoginForm()" [disabled]='!loginForm.valid' -->
+            <!-- <button type="submit" class="btn btn-primary" >Edit</button> -->
+        </div>
+      </mat-card>
+</div>
+
+
+  

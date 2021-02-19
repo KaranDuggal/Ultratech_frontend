@@ -6,7 +6,8 @@ import { AddEditProductComponent } from './add-edit-product/add-edit-product.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-
+import {MatCardModule} from '@angular/material/card';
+import {RouterModule} from '@angular/router'
 
 @NgModule({
   declarations: [AddEditProductComponent, ProductListComponent, ProductDetailsComponent],
@@ -14,7 +15,9 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     CommonModule,
     ProductRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    RouterModule
   ]
 })
 export class ProductModule { }

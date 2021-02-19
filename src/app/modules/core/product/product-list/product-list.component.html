@@ -12,17 +12,10 @@
                     <h1>size: {{product.size}}</h1>
                 </div>
                 <div class="align-middle">
-                    <a type="button" class="btn btn-outline-dark m-2" [routerLink]="['../property/'+product._id]">Detail</a>
+                    <a type="button" class="btn btn-outline-dark m-2" [routerLink]="[product._id+'/details']">Detail</a> <!-- "product._id+'/details'" -->
                     <a type="button" class="btn btn-outline-dark m-2" (click)='delete(product._id)'>Delete</a>
                 </div>
             </div>
         </div>
-        
-        <!-- <div class="col border border-dark m-5">
-
-        </div>
-        <div class="col border border-dark m-5">
-
-        </div> -->
     </div>
 </div>
