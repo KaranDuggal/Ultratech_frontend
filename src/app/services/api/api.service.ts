@@ -13,6 +13,8 @@ export class ApiService {
       return this.http.post(this.baseURL + APIEndPoint, apidata);
     }else if(method==='get'){
       return this.http.get(this.baseURL + APIEndPoint, apidata);
+    }else if(method==='delete'){
+      return this.http.delete(this.baseURL + APIEndPoint, apidata);
     }else{
       return this.http.get(this.baseURL + APIEndPoint, apidata);
     }

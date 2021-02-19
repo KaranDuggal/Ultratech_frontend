@@ -11,10 +11,10 @@
                     <h1>price: {{product.price}}</h1>
                     <h1>size: {{product.size}}</h1>
                 </div>
-                <!-- <div class="align-middle">
-                    <a type="button" class="btn btn-outline-dark m-2" [routerLink]="['../property/'+property.id]">Detail</a>
-                    <a type="button" class="btn btn-outline-dark m-2" (click)='delete(property.id)'>Delete</a>
-                </div> -->
+                <div class="align-middle">
+                    <a type="button" class="btn btn-outline-dark m-2" [routerLink]="['../property/'+product._id]">Detail</a>
+                    <a type="button" class="btn btn-outline-dark m-2" (click)='delete(product._id)'>Delete</a>
+                </div>
             </div>
         </div>
         
