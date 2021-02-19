@@ -3,41 +3,28 @@
         <h1>Add Product</h1>
     </div>
     <form [formGroup]="addproductform" (ngSubmit)="productdata()">
-        <!--  [formGroup]="signupForm" (submit)="signUp()" -->
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Product Type</label>
-            <select class="form-control" formControlName="product_type">
+        <div class="form-group" >
+            <label>Product Type</label>
+            <select class="form-control" (input)="product_type(datap.value)" #datap formControlName="product_type">
                 <option value="Cement">Cement</option>
                 <option value="Steel">Steel</option>
             </select>
-            <!-- <label for="exampleInputPassword1">Product Type</label>
-            <input type="text" formControlName="product_type" class="form-control" placeholder="Enter Your Password"> -->
-            <!-- <div *ngIf="checkLogin.password.errors && checkLogin.password.touched" class="alert alert-danger" role="alert">
-                <span *ngIf="checkLogin.password.invalid && checkLogin.password.touched">place Enter Password</span>
-            </div> -->
         </div>
         <div class="form-group">
-            <label for="exampleFormControlSelect1">Product Name</label>
-            <select class="form-control" formControlName="product_name">
-                <option value="UltraTech Weather Plus Cement">UltraTech Weather Plus Cement</option>
-            </select>
-            <!-- <label for="exampleInputEmail1">Product Name</label>
-            <input type="text" formControlName="product_name" class="form-control" placeholder="Enter Your Phone Number"> -->
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Brand Name</label>
+            <label>Brand Name</label>
             <select class="form-control" formControlName="brand_name">
                 <option value="UltraTech">UltraTech</option>
             </select>
-            <!-- <label for="exampleInputPassword1">Brand Name</label>
-            <input type="text" formControlName="brand_name" class="form-control" placeholder="Enter Your Password"> -->
-            <!-- <div *ngIf="checkLogin.password.errors && checkLogin.password.touched" class="alert alert-danger" role="alert">
-                <span *ngIf="checkLogin.password.invalid && checkLogin.password.touched">place Enter Password</span>
-            </div> -->
         </div>
-
         <div class="form-group">
-            <label for="exampleFormControlSelect1">Size</label>
+            <label>Product Name</label>
+            <select class="form-control" formControlName="product_name">
+                <option *ngIf="UWPS_value" value="UltraTech Weather Plus Cement">UltraTech Weather Plus Cement</option>
+                <option *ngIf="KNXT_value" value="Kamdhenu NXT">Kamdhenu NXT</option>
+            </select>
+        </div>
+        <div class="form-group" *ngIf="size">
+            <label>Size</label>
             <select class="form-control" formControlName="size">
                 <option value="8">8mm</option>
                 <option value="10">10mm</option>
@@ -47,44 +34,25 @@
                 <option value="25">25mm</option>
                 <option value="32">32mm</option>
             </select>
-            <!-- <input type="number" formControlName="size" class="form-control" placeholder="Enter Your Password"> -->
-            <!-- <div *ngIf="checkLogin.password.errors && checkLogin.password.touched" class="alert alert-danger" role="alert">
-                <span *ngIf="checkLogin.password.invalid && checkLogin.password.touched">place Enter Password</span>
-            </div> -->
         </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Quantity</label>
+        <div class="form-group" *ngIf="quantity">
+            <label>Quantity</label>
             <input type="number" formControlName="quantity" class="form-control" placeholder="Enter Quantity">
-            <!-- <div *ngIf="checkLogin.password.errors && checkLogin.password.touched" class="alert alert-danger" role="alert">
-                <span *ngIf="checkLogin.password.invalid && checkLogin.password.touched">place Enter Password</span>
-            </div> -->
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Price</label>
-            <input type="number" formControlName="price" class="form-control" placeholder="Enter Price">
-            <!-- <div *ngIf="checkLogin.password.errors && checkLogin.password.touched" class="alert alert-danger" role="alert">
-                <span *ngIf="checkLogin.password.invalid && checkLogin.password.touched">place Enter Password</span>
-            </div> -->
+            <input type="number" formControlName="price" class="form-control" placeholder="Enter Price" #price (keypress)="onkeydown(price.value)">
         </div>
         <hr>
         <div class="container">  <!-- formArrayName="images" -->
             <h1>Images</h1>
-            <!-- <div class="form-group" [formGroupName]="0"> -->  <!-- formControlName="0" --> 
             <input type="file" multiple (change)="onFileChange($event)" class="form-control"
                 placeholder="Enter Your property Price"><!-- multiple -->
-            <!-- </div> -->
         </div>
         <hr>
-        <!-- <div class="form-group">
-            <label for="exampleInputPassword1">Image</label>
-            <input type="file" formControlName="image" class="form-control form-control-lg" placeholder="Enter Your Password">
-            <div *ngIf="checkLogin.password.errors && checkLogin.password.touched" class="alert alert-danger" role="alert">
-                <span *ngIf="checkLogin.password.invalid && checkLogin.password.touched">place Enter Password</span>
-            </div>
-        </div> -->
         <div class="text-center">
             <button type="submit" class="btn btn-primary m-3" >Login</button> <!-- [disabled]='!addproductform.valid' -->
-            <!--  (click)="showLoginForm()" -->
         </div>
     </form>
 </div>
+<input type="number" name="" maxlength="10" id="">
